@@ -15,6 +15,11 @@ input{
   line-height: 74px;
 */
 }
+.am-btn-secondary{
+  background-color:#4993f7;
+  border: 1px solid #4993f7;
+}
+
 
 .mytable td{
   padding: 20px 0px !important;
