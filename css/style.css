@@ -1,0 +1,76 @@
+body{
+  padding-top: 20px;
+  text-align: center;
+}
+input{
+  border: none;
+}
+.top-hui{
+  padding: 15px 0px;
+  background-color: #ebebeb;
+  color: #66666;
+/*
+  height: 74px;
+  font-size: 28px;
+  line-height: 74px;
+*/
+}
+
+.mytable td{
+  padding: 20px 0px !important;
+}
+.mytable div{
+  padding: 20px 0px !important;
+  font-size: 13px;
+  border-bottom: 1px solid #ebebeb;
+
+}
+.input-hui ::placeholder{
+  color: red;
+}
+.input-hui{
+  /*background-color: #e5e5e5;*/
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fafafa;
+}
+.bg-hui{
+  background-color: #ebebeb;
+}
+.font-lable{
+font-size: 30px;
+
+}
+.h-50{
+  height: 50px;
+}
+.m-top-10{
+  margin-top: 10px;
+}
+.m-top-50{
+  margin-top: 50px;
+}
+.m-top-55{
+  margin-top: 55px;
+}
+.m-top-100{
+  margin-top: 100px;
+}
+.m-top-130{
+  margin-top: 130px;
+}
+.b-btom-hui{
+    border-bottom: 1px solid #ebebeb;
+}
+.p-h-10{
+  padding: 10px 0px !important;
+}
+.font-28{
+  font-size: 20px;
+}
+.no-padd{
+    padding:0px !important;
+}
+.w-15{
+	width: 15px;
+}
