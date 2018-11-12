@@ -14,7 +14,7 @@
 
 <body>
   <div class="am-g" style="margin-top:50px;">
-    <div class="am-u-sm-6 am-u-sm-centered">
+    <div id="changeUserInfo" class="am-u-sm-6 am-u-sm-centered">
       <div class="">
         <img style="height:100px;border-radius:50px" src="img/tou.jpg" alt="">
       </div>
@@ -37,12 +37,12 @@
     </div>
   </div>
 
-  <div class="am-g b-btom-hui p-h-10 font-28" >
+  <div  id="balance" class="am-g b-btom-hui p-h-10 font-28" >
     <div class="am-u-sm-4" style="text-align:left;">
       我的余额
     </div>
 
-    <div id="balance" class="am-u-sm-8" style="text-align:right;">
+    <div class="am-u-sm-8" style="text-align:right;">
       <img style="height:20px" src="img/right.png" alt="">
     </div>
   </div>
@@ -67,7 +67,7 @@
       </div>
       <div class="am-modal-footer">
         <div class="am-g">
-          <button type="button" style="background-color:#dbdbdb;border: 1px solid #dbdbdb; color:#333" class="am-u-sm-5 am-u-sm-centered am-btn am-btn-secondary">充值</button>
+          <a href="recharge.html" style="background-color:#dbdbdb;border: 1px solid #dbdbdb; color:#333" class="am-u-sm-5 am-u-sm-centered am-btn am-btn-secondary">充值</a>
           <button type="button" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-5 am-u-sm-centered am-btn am-btn-secondary">押金退款</button>
         </div>
         <div class="" style="margin-top: 30px;">
@@ -81,6 +81,10 @@
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
   <script type="text/javascript">
+  //修改个人信息
+  $('#changeUserInfo').click(function(){
+    window.location.href='changeUserInfo.html';
+  });
   //余额
   $('#balance').click(function(){
     window.location.href='balance.html';

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>充值</title>
+  <link rel="stylesheet" href="css/amazeui.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body >
+<div style="text-align:left;padding-left:20px;">
+
+
+<div class="font-lable" style="margin-bottom:40px;">
+  充值金额
+</div>
+
+<div class="am-g" style="margin-bottom:30px;font-size: 30px;">
+   <div class="am-u-sm-1">
+     <span>￥</span>
+   </div>
+   <div class="am-u-sm-11">
+     <input type="text" name="" value="">
+   </div>
+
+</div>
+
+<div class="" style="margin-bottom:20px;color:#999;">
+  当天24点前到账
+</div>
+
+<div class="font-lable" style="margin-bottom:80px;">
+  <div class="" style="margin-bottom:20px;">
+    选择支付方式
+  </div>
+  <div class="am-g" style="padding-right:20px">
+    <div class="am-u-sm-2">
+        <img style="height:50px;" src="img/wx.png" alt="">
+    </div>
+    <div class="am-u-sm-6" style="line-height: 50px;font-size: 20px;">
+        微信支付
+    </div>
+    <div class="am-u-sm-2">
+
+    </div>
+    <div class="am-u-sm-2" style="font-size: 20px;">
+      <img class="inbox" style="height:30px;" src="img/off.png" alt="">
+    </div>
+  </div>
+
+  <hr>
+  <div class="am-g" style="padding-right:20px">
+    <div class="am-u-sm-2">
+        <img style="height:50px;" src="img/ye.png" alt="">
+    </div>
+    <div class="am-u-sm-6" style="line-height: 50px;font-size: 20px;">
+        余额支付
+    </div>
+    <div class="am-u-sm-2">
+
+    </div>
+    <div class="am-u-sm-2" style="font-size: 20px;">
+      <img class="inbox" style="height:30px;" src="img/off.png" alt="">
+    </div>
+  </div>
+
+
+</div>
+
+</div>
+  <a href="paySuccess.html" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">充值</a>
+  <script src="js/jquery.min.js" charset="utf-8"></script>
+  <script src="js/amazeui.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $('.inbox').click(function(){
+      $('.inbox').attr("src","img/off.png");
+      $(this).attr("src","img/on.png");
+    });
+  </script>
+</body>
+
+</html>

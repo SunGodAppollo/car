@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>财务明细</title>
+  <link rel="stylesheet" href="css/amazeui.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="am-g b-btom-hui p-h-10 font-28">
+    <div class="am-u-sm-8" style="text-align:left;">
+      头像
+    </div>
+
+    <div class="am-u-sm-4">
+      <img style="height:50px;border-radius:25px" src="img/tou.jpg" alt="">
+      <img style="height:20px" src="img/right.png" alt="">
+    </div>
+  </div>
+
+  <div class="am-g b-btom-hui p-h-10 font-28">
+    <div class="am-u-sm-3" style="text-align:left;">
+      手机号
+    </div>
+
+    <div class="am-u-sm-8" style="text-align:right;">
+    <span style="color:#999;">13348814512</span>
+    </div>
+  </div>
+
+  <div class="am-g b-btom-hui p-h-10 font-28">
+    <div class="am-u-sm-3" style="text-align:left;">
+      昵称
+    </div>
+
+    <div class="am-u-sm-8" style="text-align:right;">
+        <span style="color:#999;">汤姆</span>
+      <img style="height:20px" src="img/right.png" alt="">
+    </div>
+  </div>
+
+  <div id="addCarNumber" class="am-g b-btom-hui p-h-10 font-28">
+    <div class="am-u-sm-4" style="text-align:left;">
+      车牌号
+    </div>
+
+    <div class="am-u-sm-8" style="text-align:right;">
+        <span style="color:#999;">请输入车牌号</span>
+      <img style="height:20px" src="img/right.png" alt="">
+    </div>
+  </div>
+
+
+  <script src="js/jquery.min.js" charset="utf-8"></script>
+  <script src="js/amazeui.min.js" charset="utf-8"></script>
+
+  <script type="text/javascript">
+  //添加车牌号
+  $('#addCarNumber').click(function(){
+    window.location.href='carNumber.html';
+  });
+  </script>
+</body>
+
+</html>
