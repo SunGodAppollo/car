@@ -169,13 +169,10 @@
         },
         function(data) {
           console.log(data);
-          /*if (data.header.ret == 'S') {
-            thisBtn.removeClass('am-btn-secondary');
-            thisBtn.addClass('am-btn-default');
-            thisBtn.addClass('am-disabled');
-            resetTime(60,thisBtn);
-            console.log(10);
-          }*/
+          if (data.header.ret == 'S') {
+             alert('注册成功');
+             window.location.href='login.html';
+          }
 
         }
 
