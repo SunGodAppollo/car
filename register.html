@@ -66,7 +66,7 @@
 
 
     <div class="am-g m-top-130">
-      <button type="button" style="height:50px;" class="am-u-sm-12 am-u-sm-centered am-btn am-btn-secondary">确定</button>
+      <button onclick="registerBtn()" type="button" style="height:50px;" class="am-u-sm-12 am-u-sm-centered am-btn am-btn-secondary">确定</button>
     </div>
 
 
@@ -151,6 +151,42 @@
       }
       timer = setInterval(countDown, 1000);
     }
+    //验证登录
+    function registerBtn(){
+      var action = '/member/register'
+      //组合url
+      var url = webHost + action;
+      var phoneNumber = $("#phone").val();
+
+
+
+      $.get(
+        url, {
+          phone: '18980004397',
+          verificationCode:'666666',
+          passWord:123456,
+          registDate:'2018年11月13日'
+        },
+        function(data) {
+          console.log(data);
+          /*if (data.header.ret == 'S') {
+            thisBtn.removeClass('am-btn-secondary');
+            thisBtn.addClass('am-btn-default');
+            thisBtn.addClass('am-disabled');
+            resetTime(60,thisBtn);
+            console.log(10);
+          }*/
+
+        }
+
+      );
+      console.log(1);
+    }
+
+
+
+
+
   </script>
 </body>
 
