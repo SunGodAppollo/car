@@ -20,7 +20,7 @@
         <img class="w-15" src="img/user.png" alt="">
       </div>
      <div class="am-u-sm-10">
-       <input type="text" style="border:none;background-color: #ebebeb;" class="" id="doc-ipt-email-1" placeholder="请输入账号">
+       <input type="text" name="phone" style="border:none;background-color: #ebebeb;" class="" id="phone" placeholder="请输入账号">
      </div>
 
     </div>
@@ -30,7 +30,7 @@
         <img class="w-15" src="img/mi.png" alt="">
       </div>
      <div class="am-u-sm-10">
-       <input type="password" style="border:none;background-color: #ebebeb;" class="" id="doc-ipt-email-1" placeholder="请输入密码">
+       <input name="password" type="password" style="border:none;background-color: #ebebeb;" class="" id="password" placeholder="请输入密码">
      </div>
 
     </div>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="am-g m-top-130">
-      <button type="button" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">登陆</button>
+      <button id="login" type="button" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">登陆</button>
     </div>
 
     <div class="am-g" style="margin-top: 20px;">
@@ -61,6 +61,7 @@
 
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
+  <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
   var isin=false;
     $('.on-off').click(function(){
@@ -72,6 +73,39 @@
       }
 
     });
+    //登陆
+    $('#login').click(function(){
+        var phone=$('#phone').val();
+        var password=$('#password').val();
+
+        var action = '/member/login'
+        //组合url
+        var url = webHost + action;
+
+
+
+
+        $.get(
+          url, {
+            phone: phone,
+            passWord:password,
+          },
+          function(data) {
+            console.log(data);
+            if (data.header.ret == 'S') {
+               alert('登陆成功');
+               //window.location.href='login.html';
+            }
+
+          }
+
+        );
+        console.log(1);
+        console.log(name);
+        console.log(password);
+    });
+
+
   </script>
 </body>
 
