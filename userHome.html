@@ -19,7 +19,7 @@
         <img style="height:100px;border-radius:50px" src="img/tou.jpg" alt="">
       </div>
 
-      <div class="font-lable" style="margin-top:20px;">
+      <div class="" id="phone" style="font-size: 26px;margin-top:20px;">
         汤姆
       </div>
     </div>
@@ -80,6 +80,7 @@
 
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
+  <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
   //修改个人信息
   $('#changeUserInfo').click(function(){
@@ -90,9 +91,17 @@
     window.location.href='balance.html';
   });
     //记录
-    $('#record').click(function(){
+  $('#record').click(function(){
       window.location.href='record.html';
-    });
+  });
+
+  //----------------------------------------
+  console.log(getCookie('id'));
+  var nickName=getCookie('nickName');//昵称
+  var phone=getCookie('phone');//电话
+  console.log(phone);
+  $("#phone").html(phone);
+
   </script>
 
 </body>

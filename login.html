@@ -67,6 +67,7 @@
     var isin=false;//记住密码按钮的开关
     //
     var remberpassword=document.cookie.split(";")[0].split("=")[1];
+    console.log(getCookie('id'));
     //console.log(username);
     if(remberpassword!=''){
       isin=true;
@@ -115,8 +116,9 @@
             if (data.header.ret == 'S') {
                alert('登陆成功');
                //cookieAdd('userInfp',data.menber);
-               cookieUser(data.menber);
-               //window.location.href='login.html';
+               //console.log(data.data.menber);
+               cookieUser(data.data.menber);
+               window.location.href='userHome.html';
             }
 
           }
