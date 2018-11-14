@@ -87,13 +87,16 @@
 
 
     //支付
+    var payid;
     $('#pay').click(function(){
-      console.log(100);
+
       pay(100);
+      //wxpay();
     });
 
     //支付请求
     function pay(money){
+      console.log(money);
       var id=getCookie('id');//id
       var action = '/pay/generateOrder'
       //组合url
@@ -106,6 +109,27 @@
         function(data) {
           console.log(data);
           if (data.header.ret == 'S') {
+            payid=data.data.outtradeno;
+            console.log(payid);
+          }
+
+        }
+
+      );
+    }
+    //微信支付
+    function wxpay(money){
+      var id=getCookie('id');//id
+      var action = '/pay/wxpay-unified-bail'
+      //组合url
+      var url = webHost + action;
+      $.get(
+        url, {
+          outtradeno: payid,
+        },
+        function(data) {
+          console.log(data);
+          if (data.header.ret == 'S') {
 
           }
 
@@ -113,6 +137,7 @@
 
       );
     }
+
 
   </script>
 </body>
