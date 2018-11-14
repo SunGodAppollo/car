@@ -63,7 +63,17 @@
   <script src="js/amazeui.min.js" charset="utf-8"></script>
   <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
-  var isin=false;
+    var isin=false;//记住密码按钮的开关
+    //
+    var remberpassword=document.cookie.split(";")[0].split("=")[1];
+    //console.log(username);
+    if(remberpassword!=''){
+      isin=true;
+      $('.inbox').attr("src","img/on.png");
+      $('#password').val(remberpassword);
+      console.log(remberpassword);
+    }
+    //是否记住密码切换
     $('.on-off').click(function(){
       isin=!isin;
       if(isin){
@@ -75,16 +85,25 @@
     });
     //登陆
     $('#login').click(function(){
-        var phone=$('#phone').val();
-        var password=$('#password').val();
+      //获取页面数据
+      var phone=$('#phone').val();
+      var password=$('#password').val();
+      console.log(name);
+      console.log(password);
+
+        //记住密码选中时打开保存密码
+        if(isin){
+          console.log('res');
+           document.cookie="password="+password;
+        }else {
+          //不选中清除cookie
+          document.cookie="password="+'';
+        }
+
 
         var action = '/member/login'
         //组合url
         var url = webHost + action;
-
-
-
-
         $.get(
           url, {
             phone: phone,
@@ -101,8 +120,7 @@
 
         );
         console.log(1);
-        console.log(name);
-        console.log(password);
+
     });
 
 
