@@ -40,7 +40,7 @@
     </div>
 
     <div class="am-u-sm-8" style="text-align:right;">
-        <span style="color:#999;">汤姆</span>
+        <span id="nickName" style="color:#999;">汤姆</span>
       <img style="height:20px" src="img/right.png" alt="">
     </div>
   </div>
@@ -56,15 +56,26 @@
     </div>
   </div>
 
+  <div class="am-g m-top-130">
+    <button onclick="" type="button" style="height:50px;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">修改信息</button>
+  </div>
 
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
-
+  <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
   //添加车牌号
   $('#addCarNumber').click(function(){
     window.location.href='carNumber.html';
   });
+  </script>
+  <script type="text/javascript">
+    //http://47.94.14.140:8081/washcarApp/file-upload/ossUpload
+    //上传地址
+    var nickName=getCookie('nickName');//昵称
+    var phone=getCookie('phone');//电话
+    //显示数据
+    $("#nickName").html(nickName);
   </script>
 </body>
 

@@ -28,10 +28,11 @@ return ""
 
 function cookieUser(val){
 console.log(val);
-document.cookie="id"+"="+val.id;
-document.cookie="nickName"+"="+val.nickName;
-document.cookie="image"+"="+val.image;
-document.cookie="phone"+"="+val.phone;
+document.cookie="id"+"="+val.id;//id
+document.cookie="nickName"+"="+val.nickName;//昵称
+document.cookie="image"+"="+val.image;//头像图片地址
+document.cookie="phone"+"="+val.phone;//电话
+document.cookie="carNumber"+"="+val.carNumber;//车牌号
 
 
 }

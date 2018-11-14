@@ -91,7 +91,7 @@
     $('#pay').click(function(){
 
       pay(100);
-      //wxpay();
+
     });
 
     //支付请求
@@ -111,6 +111,7 @@
           if (data.header.ret == 'S') {
             payid=data.data.outtradeno;
             console.log(payid);
+            wxpay();
           }
 
         }
@@ -123,14 +124,13 @@
       var action = '/pay/wxpay-unified-bail'
       //组合url
       var url = webHost + action;
-      $.get(
+      $.post(
         url, {
           outtradeno: payid,
         },
         function(data) {
           console.log(data);
           if (data.header.ret == 'S') {
-
           }
 
         }
