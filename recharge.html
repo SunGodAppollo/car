@@ -73,14 +73,47 @@
 </div>
 
 </div>
-  <a href="paySuccess.html" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">充值</a>
+  <button id="pay" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">充值</button>
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
+  <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
+  //支付方式选择
     $('.inbox').click(function(){
       $('.inbox').attr("src","img/off.png");
       $(this).attr("src","img/on.png");
     });
+
+
+    //支付
+    $('#pay').click(function(){
+      console.log(100);
+      pay(100);
+    });
+
+    //支付请求
+    function pay(money){
+      var id=getCookie('id');//id
+      var action = '/pay/generateOrder'
+      //组合url
+      var url = webHost + action;
+      $.get(
+        url, {
+          memberId: id,
+          money:money
+        },
+        function(data) {
+          console.log(data);
+          if (data.header.ret == 'S') {
+
+          }
+
+        }
+
+      );
+    }
+
   </script>
 </body>
 

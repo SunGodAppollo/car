@@ -48,6 +48,34 @@
 
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
+  <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+   getmsg();
+
+  function getmsg(){
+    var id=getCookie('id');//id
+    var action = '/member/washCarRecord'
+    //组合url
+    var url = webHost + action;
+    $.get(
+      url, {
+        userId: id,
+        pageSize:10,
+        pageNo:1
+      },
+      function(data) {
+        console.log(data);
+        if (data.header.ret == 'S') {
+
+        }
+
+      }
+
+    );
+    console.log(1);
+  }
+  </script>
 </body>
 
 </html>
