@@ -19,7 +19,11 @@
     </div>
 
     <div class="am-u-sm-4">
-      <img style="height:50px;border-radius:25px" src="img/tou.jpg" alt="">
+      <form id="form1">
+        <input name="fileUpload" type="file" style="display:none;" id="fileInput" name="" value="">
+      </form>
+
+      <img id="touxiang" style="height:50px;border-radius:25px" src="img/tou.jpg" alt="">
       <img style="height:20px" src="img/right.png" alt="">
     </div>
   </div>
@@ -64,6 +68,34 @@
   <script src="js/amazeui.min.js" charset="utf-8"></script>
   <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
+  //更改头像
+  $("#touxiang").click(function(){
+      console.log(1);
+      $("#fileInput").click();
+  });
+
+   $("#fileInput").change(function(){
+     var url='http://47.94.14.140:8081/washcarApp/file-upload/ossUpload';
+    // var data=new FormData($('#form1')[0]);
+    var data=new FormData(document.getElementById("form1"));
+     console.log(data);
+     $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            dataType: 'JSON',
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(data) {
+    					//const obj = JSON.parse(data);
+    					console.log(data.url);
+              $('#touxiang').attr("src", data.url);
+				},
+        });
+
+  });
+
   //添加车牌号
   $('#addCarNumber').click(function(){
     window.location.href='carNumber.html';
