@@ -33,6 +33,10 @@ document.cookie="nickName"+"="+val.nickName;//昵称
 document.cookie="image"+"="+val.image;//头像图片地址
 document.cookie="phone"+"="+val.phone;//电话
 document.cookie="carNumber"+"="+val.carNumber;//车牌号
+document.cookie="balance"+"="+val.balance;//余额
+document.cookie="integral"+"="+val.integral;//积分
+document.cookie="deposit"+"="+val.deposit;//押金
+document.cookie="registDate"+"="+val.registDate;//登记日期
 
 
 }
