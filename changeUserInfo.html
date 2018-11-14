@@ -38,8 +38,8 @@
     </div>
   </div>
 
-  <div class="am-g b-btom-hui p-h-10 font-28">
-    <div class="am-u-sm-3" style="text-align:left;">
+  <div id="doc-prompt-toggle" class="am-g b-btom-hui p-h-10 font-28">
+    <div  class="am-u-sm-3" style="text-align:left;">
       昵称
     </div>
 
@@ -50,15 +50,42 @@
   </div>
 
   <div id="addCarNumber" class="am-g b-btom-hui p-h-10 font-28">
-    <div class="am-u-sm-4" style="text-align:left;">
+    <div class="am-u-sm-4" style="text-align:left;" id="doc-prompt-carid">
       车牌号
     </div>
 
     <div class="am-u-sm-8" style="text-align:right;">
-        <span style="color:#999;">请输入车牌号</span>
+        <span id="caridNumber" style="color:#999;">请输入车牌号</span>
       <img style="height:20px" src="img/right.png" alt="">
     </div>
   </div>
+
+  <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
+  <div class="am-modal-dialog">
+    <div class="am-modal-bd">
+      请输入您的昵称
+      <input type="text" class="am-modal-prompt-input">
+    </div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+      <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="carid">
+<div class="am-modal-dialog">
+  <div class="am-modal-bd" id="carid">
+    请输入车牌号
+    <input type="text" class="am-modal-prompt-input">
+  </div>
+  <div class="am-modal-footer">
+    <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+    <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+  </div>
+</div>
+</div>
 
   <div class="am-g m-top-130">
     <button onclick="" type="button" style="height:50px;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">修改信息</button>
@@ -68,6 +95,36 @@
   <script src="js/amazeui.min.js" charset="utf-8"></script>
   <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
+  $(function() {
+  $('#doc-prompt-toggle').on('click', function() {
+    $('#my-prompt').modal({
+      relatedTarget: this,
+      onConfirm: function(e) {
+        //alert('你输入的是：' + e.data || '')
+        $("#nickName").html(e.data);
+      },
+      onCancel: function(e) {
+        //alert('不想说!');
+      }
+    });
+  });
+});
+
+$(function() {
+$('#doc-prompt-carid').on('click', function() {
+  $('#carid').modal({
+    relatedTarget: this,
+    onConfirm: function(e) {
+      //alert('你输入的是：' + e.data || '')
+        $("#caridNumber").html(e.data);
+    },
+    onCancel: function(e) {
+      //alert('不想说!');
+    }
+  });
+});
+});
+
   //更改头像
   $("#touxiang").click(function(){
       console.log(1);
@@ -97,7 +154,7 @@
   });
 
   //添加车牌号
-  $('#addCarNumber').click(function(){
+  $('#addCarNumber1').click(function(){
     window.location.href='carNumber.html';
   });
   </script>
