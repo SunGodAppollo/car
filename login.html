@@ -62,6 +62,7 @@
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
   <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
     var isin=false;//记住密码按钮的开关
     //
@@ -113,6 +114,8 @@
             console.log(data);
             if (data.header.ret == 'S') {
                alert('登陆成功');
+               //cookieAdd('userInfp',data.menber);
+               cookieUser(data.menber);
                //window.location.href='login.html';
             }
 
