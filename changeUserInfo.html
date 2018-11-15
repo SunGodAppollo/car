@@ -49,8 +49,8 @@
     </div>
   </div>
 
-  <div id="addCarNumber" class="am-g b-btom-hui p-h-10 font-28">
-    <div class="am-u-sm-4" style="text-align:left;" id="doc-prompt-carid">
+  <div id="addCarNumber"  class="doc-prompt-carid am-g b-btom-hui p-h-10 font-28">
+    <div class="am-u-sm-4" style="text-align:left;" >
       车牌号
     </div>
 
@@ -88,11 +88,12 @@
 </div>
 
   <div class="am-g m-top-130">
-    <button onclick="" type="button" style="height:50px;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">修改信息</button>
+    <button id="changeUserInfo" type="button" style="height:50px;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">修改信息</button>
   </div>
 
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
+  <script src="js/config.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
   $(function() {
@@ -111,7 +112,7 @@
 });
 
 $(function() {
-$('#doc-prompt-carid').on('click', function() {
+$('.doc-prompt-carid').on('click', function() {
   $('#carid').modal({
     relatedTarget: this,
     onConfirm: function(e) {
@@ -157,15 +158,51 @@ $('#doc-prompt-carid').on('click', function() {
   $('#addCarNumber1').click(function(){
     window.location.href='carNumber.html';
   });
+  //-----------
+  //http://47.94.14.140:8081/washcarApp/file-upload/ossUpload
+  //上传地址
+  var nickName=getCookie('nickName');//昵称
+  var phone=getCookie('phone');//电话
+  var carNumber=getCookie('carNumber');//车牌号
+  var image=getCookie('image');//头像
+  //显示数据
+  $("#nickName").html(nickName);
+  $("#caridNumber").html(carNumber);
+  $('#touxiang').attr("src", image);
+  //修改数据
+  $('#changeUserInfo').click(function(){
+    var userId=getCookie('id');
+    var nickName=$("#nickName").text();
+    var carNumber=$("#caridNumber").html();
+    var image=$("#touxiang").attr("src");
+    console.log(userId);
+
+    var action = '/member/upInfo'
+    //组合url
+    var url = webHost + action;
+    $.post(
+      url, {
+        userId: userId,
+        nickName:nickName,
+        carNumber:carNumber,
+        image:image
+      },
+      function(data) {
+        console.log(data.header);
+        if (data.header.ret == 'S') {
+
+          console.log(10);
+        }
+
+      }
+
+    );
+
+
+
+  });
   </script>
-  <script type="text/javascript">
-    //http://47.94.14.140:8081/washcarApp/file-upload/ossUpload
-    //上传地址
-    var nickName=getCookie('nickName');//昵称
-    var phone=getCookie('phone');//电话
-    //显示数据
-    $("#nickName").html(nickName);
-  </script>
+
 </body>
 
 </html>

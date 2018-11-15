@@ -12,37 +12,14 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="body">
   <div class="am-g top-hui">
     <div class="am-u-sm-6">消费金额</div>
     <div class="am-u-sm-6">时间</div>
   </div>
 
 
-  <div class="am-g mytable">
-    <div class="am-u-sm-6">￥10.00</div>
-    <div class="am-u-sm-6">2018-10-22 10:34:57</div>
-  </div>
-  <div class="am-g mytable">
-    <div class="am-u-sm-6">￥10.00</div>
-    <div class="am-u-sm-6">2018-10-22 10:34:57</div>
-  </div>
-  <div class="am-g mytable">
-    <div class="am-u-sm-6">￥10.00</div>
-    <div class="am-u-sm-6">2018-10-22 10:34:57</div>
-  </div>
-  <div class="am-g mytable">
-    <div class="am-u-sm-6">￥10.00</div>
-    <div class="am-u-sm-6">2018-10-22 10:34:57</div>
-  </div>
-  <div class="am-g mytable">
-    <div class="am-u-sm-6">￥10.00</div>
-    <div class="am-u-sm-6">2018-10-22 10:34:57</div>
-  </div>
-  <div class="am-g mytable">
-    <div class="am-u-sm-6">￥10.00</div>
-    <div class="am-u-sm-6">2018-10-22 10:34:57</div>
-  </div>
+
 
 
 
@@ -67,7 +44,18 @@
       function(data) {
         console.log(data);
         if (data.header.ret == 'S') {
-
+            console.log(data.data.list);
+            var mylist=data.data.list;
+            for(var index in mylist) {
+               console.log(index,mylist[index]);
+               var str='<div class="am-g mytable">';
+               str=str+'<div class="am-u-sm-6">￥'+mylist[index].sunMoney+'</div>';
+               str=str+'<div class="am-u-sm-6">'+mylist[index].createTime+'</div>';
+               str=str+'</div>';
+               console.log(str);
+               $("#body").append(str);
+             };
+        //
         }
 
       }

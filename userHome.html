@@ -16,11 +16,11 @@
   <div class="am-g" style="margin-top:50px;">
     <div id="changeUserInfo" class="am-u-sm-6 am-u-sm-centered">
       <div class="">
-        <img style="height:100px;border-radius:50px" src="img/tou.jpg" alt="">
+        <img id="touxiang" style="height:100px;border-radius:50px" src="img/tou.jpg" alt="">
       </div>
 
-      <div class="" id="phone" style="font-size: 26px;margin-top:20px;">
-        汤姆
+      <div class="" id="nickName" style="font-size: 26px;margin-top:20px;">
+
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="am-u-sm-8" style="text-align:right;">
-        <span style="color:#999;">￥100</span>
+        <span id="yajin" style="color:#999;">￥100</span>
         <a href="javascript:;" data-am-modal="{target: '#my-confirm'}">押金退款</a>
       <img style="height:20px" src="img/right.png" alt="">
     </div>
@@ -99,8 +99,13 @@
   console.log(getCookie('id'));
   var nickName=getCookie('nickName');//昵称
   var phone=getCookie('phone');//电话
-  console.log(phone);
+  var image=getCookie('image');//头像
+  var deposit=getCookie('deposit');//余额
+
+  $('#touxiang').attr("src", image);
+  $("#nickName").html(nickName);
   $("#phone").html(phone);
+  $("#yajin").html("￥"+deposit);
 
   </script>
 
