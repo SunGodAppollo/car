@@ -13,15 +13,25 @@
 </head>
 
 <body>
-  <div class="am-g" style="margin-top: 100px;">
+  <div class="am-g m-top-55" >
+    <div class="am-u-sm-4 am-u-sm-centered">
+      <img width="100%" src="img/su.png" alt="">
+    </div>
+  </div>
+
+  <div class="am-g m-top-10" >
     <div class="am-u-sm-6 am-u-sm-centered">
-      <img width="100%" src="img/ye.png" alt="">
+      <div style="font-size: 22px;">
+          申请退款成功
+      </div>
+
+
     </div>
   </div>
 
   <div class="am-g" style="margin-top: 20px;">
-    <div class="am-u-sm-6 am-u-sm-centered">
-      <div id="balance" class="font-lable">
+    <div class="am-u-sm-8 am-u-sm-centered">
+      <div style="font-size: 38px;">
           ￥100.00
       </div>
 
@@ -29,17 +39,23 @@
     </div>
   </div>
 
+
+  <div class="am-g" style="margin-top: 20px;">
+    <div class="am-u-sm-8 am-u-sm-centered">
+      <div style="font-size: 16px;color:#999;">
+          退款将在2-7个工作日到账
+      </div>
+
+
+    </div>
+  </div>
+
   <div class="am-g m-top-50">
-    <a href="recharge.html" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">充值</a>
+    <button type="button" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">确定</button>
   </div>
 
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
-  <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
-    var balance=getCookie('balance');//余额
-    $("#balance").html('￥'+balance);
-  </script>
 </body>
 
 </html>

@@ -21,7 +21,7 @@
 
   <div class="am-g" style="margin-top: 20px;">
     <div class="am-u-sm-6 am-u-sm-centered">
-      <div id="balance" class="font-lable">
+      <div class="font-lable">
           ￥100.00
       </div>
 
@@ -30,16 +30,15 @@
   </div>
 
   <div class="am-g m-top-50">
-    <a href="recharge.html" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">充值</a>
+    <button type="button" style="background-color:#4993f7;border: 1px solid #4993f7;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">充值</button>
+  </div>
+
+  <div class="am-g m-top-10">
+    <button type="button" style="background-color:#f5f5f5;border: 1px solid #f5f5f5;color:#333;" class="am-u-sm-10 am-u-sm-centered am-btn am-btn-secondary">提现明细</button>
   </div>
 
   <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/amazeui.min.js" charset="utf-8"></script>
-  <script src="js/cookieFunction.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
-    var balance=getCookie('balance');//余额
-    $("#balance").html('￥'+balance);
-  </script>
 </body>
 
 </html>

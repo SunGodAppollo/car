@@ -190,7 +190,8 @@ $('.doc-prompt-carid').on('click', function() {
       function(data) {
         console.log(data.header);
         if (data.header.ret == 'S') {
-
+          alert('修改成功!');
+          window.location.href='userHome.html';
           console.log(10);
         }
 
